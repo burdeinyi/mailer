@@ -1,0 +1,16 @@
+.idea/
+.git/
+vendor/
+config/parameters.yml
+var/*
+!var/cache
+var/cache/*
+!var/cache/.gitkeep
+!var/logs
+var/logs/*
+!var/logs/.gitkeep
+docker-compose.yml
+Dockerfile
+manager
+README.md
+.env

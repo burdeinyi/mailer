@@ -1,0 +1,44 @@
+{
+    "name": "mlgw",
+    "description": "Mail Gateway",
+    "autoload": {
+    },
+    "require": {
+        "silex/silex": "~2.0",
+        "swiftmailer/swiftmailer": "^6.0",
+        "sorien/silex-pimple-dumper": "~2.0",
+        "monolog/monolog": "^1.23",
+        "symfony/form": "^3.3",
+        "symfony/validator": "^3.3",
+        "symfony/config": "^3.3",
+        "symfony/yaml": "^3.3",
+        "incenteev/composer-parameter-handler": "~2.1"
+    },
+    "scripts": {
+        "params": [
+            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters"
+        ],
+        "build": [
+            "@params"
+        ],
+        "post-install-cmd": [
+            "@build"
+        ],
+        "post-update-cmd": [
+            "@build"
+        ]
+    },
+    "extra": {
+        "incenteev-parameters": {
+            "keep-outdated": true,
+            "file": "config/parameters.yml",
+            "dist-file": "config/parameters.yml.dist",
+            "env-map": {
+                "fake_mode":  "MLGW_FAKE_MODE",
+                "fake_email":  "MLGW_FAKE_EMAIL",
+                "ghost_mode": "MLWG_GHOST_MODE",
+                "debug":  "SILEX_DEBUG"
+            }
+        }
+    }
+}

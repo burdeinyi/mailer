@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+    mlgw:
+        build: .
+        restart: unless-stopped
+        volumes:
+            - "./:/opt/app"
+        ports:
+          - 8090:80
+        environment:
+            SILEX_DEBUG: ${SILEX_DEBUG:-true} #asd
+            MLGW_FAKE_MODE: ${MLGW_FAKE_MODE:-true}
+            FAKE_EMAIL: ${MLGW_FAKE_EMAIL:-changemeto@getemails.com}
+            DEV_MODE: ${MLGW_DEV_MODE:-true}
+            PUID: ${PUID:-1000}
+            PGID: ${PGID:-1000}

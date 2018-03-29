@@ -1,0 +1,5 @@
+parameters:
+    fake_mode: true
+    fake_email: changemeto@getemails.com
+    ghost_mode: false
+    debug: true
